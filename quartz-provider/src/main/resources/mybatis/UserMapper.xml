@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.v5zhu.dubbo.dao.repository.mybatis.UserMybatisDao">
+    <!--查询结果不包含app列表-->
+    <resultMap id="UserMap" type="com.v5zhu.dubbo.po.entity.User">
+
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="loginName" column="login_name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <select id="findByLoginName" resultMap="UserMap" parameterType="string">
+      select * from user where login_name=#{0};
+    </select>
+
+</mapper>

@@ -1,0 +1,25 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+       <!--http://www.springframework.org/schema/beans/spring-beans.xsd-->
+       <!--http://code.alibabatech.com/schema/dubbo-->
+       <!--http://code.alibabatech.com/schema/dubbo/dubbo.xsd">-->
+<!--&lt;!&ndash; 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 &ndash;&gt;-->
+<!--&lt;!&ndash;<dubbo:application name="chop-app-consumer"/>&ndash;&gt;-->
+
+<!--<dubbo:consumer timeout="${zookeeper.provider.timeout}"/>-->
+
+<!--&lt;!&ndash; 使用multicast广播注册中心暴露发现服务地址 &ndash;&gt;-->
+<!--<dubbo:registry address="${zookeeper.consumber.address}"-->
+                <!--file="/data/dubbo/chop/chop-app-dubbo.cache"/>-->
+<!--&lt;!&ndash;用户分组服务&ndash;&gt;-->
+<!--<dubbo:reference id="developerService" interface="com.changhong.open.user.api.op.DeveloperService"-->
+                 <!--protocol="dubbo"/>-->
+    <!--<dubbo:reference id="userService" interface="com.changhong.open.user.api.op.UserService"-->
+                     <!--protocol="dubbo"/>-->
+    <!--<dubbo:reference id="noticeService" interface="com.changhong.open.user.api.op.NoticeService"-->
+                     <!--protocol="dubbo"/>-->
+
+<!--</beans>-->

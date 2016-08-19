@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="dubbo-demo"/>
+    <!-- 使用multicast广播注册中心暴露服务地址 -->
+    <dubbo:registry address="${zookeeper.registry.address}"
+            file="/data/dubbo/dubbo.cache"/>
+
+    <dubbo:protocol name="dubbo" port="${zookeeper.protocol.port}" serialization="hessian2"/>
+    <dubbo:provider timeout="${zookeeper.provider.timeout}"/>
+    <dubbo:annotation package="com.v5zhu.dubbo.api.impl.facade"/>
+    <!-- use tomcat server -->
+    <dubbo:protocol name="rest" port="${rest.port}" contextpath="api" server="tomcat"
+                    extension="com.v5zhu.dubbo.extension.TraceInterceptor,
+                    com.v5zhu.dubbo.extension.TraceFilter,
+                    com.v5zhu.dubbo.extension.ClientTraceFilter,
+                    com.v5zhu.dubbo.extension.DynamicTraceBinding,
+                    com.v5zhu.dubbo.extension.CustomExceptionMapper,
+                    com.v5zhu.dubbo.extension.ValidationExceptionMapper,
+                    com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
+    <!-- 声明需要暴露的服务接口【DUBBO】 -->
+
+    <dubbo:service protocol="dubbo" interface="com.v5zhu.dubbo.api.UserService"
+                   ref="userService"/>
+
+    <!-- 声明需要暴露的服务接口【REST】-->
+    <dubbo:service protocol="rest" interface="com.v5zhu.dubbo.api.facade.UserRestService" validation="true"
+                   ref="userRestService"/>
+
+    <!--Spring bean 配置-->
+    <bean id="userService"
+          class="com.v5zhu.dubbo.api.impl.UserServiceImpl"/>
+    <bean id="userRestService"
+          class="com.v5zhu.dubbo.api.impl.facade.UserRestServiceImpl"/>
+</beans>
+
