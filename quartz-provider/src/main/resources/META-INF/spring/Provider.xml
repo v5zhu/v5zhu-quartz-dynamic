@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="chos-task-schedule"/>
+    <!-- 使用multicast广播注册中心暴露服务地址 -->
+    <dubbo:registry address="${zookeeper.registry.address}"/>
+    <dubbo:protocol name="dubbo" port="${zookeeper.protocol.port}" serialization="hessian2"/>
+    <dubbo:provider timeout="${zookeeper.provider.timeout}"/>
+
+    <!-- 声明需要暴露的服务接口【DUBBO】 -->
+
+    <dubbo:service protocol="dubbo" interface="com.v5zhu.quartz.api.TaskService"
+                   ref="taskService"/>
+
+    <dubbo:service protocol="dubbo" interface="com.v5zhu.quartz.api.TaskTest"
+                   ref="taskTest"/>
+
+    <!--Spring bean 配置-->
+    <bean id="taskService"
+          class="com.v5zhu.quartz.api.service.TaskServiceImpl"/>
+    <bean id="taskTest"
+          class="com.v5zhu.quartz.api.TaskTestImpl"/>
+</beans>
