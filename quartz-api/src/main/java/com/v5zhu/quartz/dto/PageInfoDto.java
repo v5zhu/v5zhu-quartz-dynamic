@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 分页信息
- * Created by xiaoP on 2015/4/28.
+ * Created by v5zhu@qq.com on 2016-9-20.
  */
 
 public class PageInfoDto<T> implements Serializable{

@@ -25,9 +25,9 @@ import java.util.Set;
 
 
 /**
- * @author wei9.li@changhong.com
+ * @author v5zhu@qq.com
  * @Description: 计划任务管理
- * @date 2015年4月20日 下午2:43:54
+ * @date 2016-9-20
  */
 @SuppressWarnings("SpringJavaAutowiringInspection")
 public class TaskServiceImpl implements TaskService {

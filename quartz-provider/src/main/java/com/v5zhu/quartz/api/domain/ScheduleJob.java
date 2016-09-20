@@ -6,8 +6,8 @@ import java.util.Date;
 /**
  * 
 * @Description: 计划任务信息
-* @author wei9.li@changhong.com
-* @date 2015年4月20日
+* @author v5zhu@qq.com
+* @date 2016-9-20
  */
 public class ScheduleJob implements Serializable{
 

@@ -1,7 +1,7 @@
 package com.v5zhu.quartz.consumer.controller;
 
 /**
- * Created by wei9.li@changhong.com on 2015/4/22.
+ * Created by v5zhu@qq.com on 2016-9-20.
  */
 public class OkPacket {
     private final int code = 200;

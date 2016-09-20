@@ -7,7 +7,7 @@ import com.v5zhu.quartz.dto.ScheduleJobDto;
 import java.util.List;
 
 /**
- * Created by wei9.li@changhong.com on 2015/4/20.
+ * Created by v5zhu@qq.com on 2016-9-20.
  */
 public interface TaskService {
 
