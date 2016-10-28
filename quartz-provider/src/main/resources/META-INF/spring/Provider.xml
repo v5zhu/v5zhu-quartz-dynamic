@@ -19,12 +19,7 @@
     <dubbo:service protocol="dubbo" interface="com.v5zhu.quartz.api.TaskService"
                    ref="taskService"/>
 
-    <dubbo:service protocol="dubbo" interface="com.v5zhu.quartz.api.TaskTest"
-                   ref="taskTest"/>
-
     <!--Spring bean 配置-->
     <bean id="taskService"
           class="com.v5zhu.quartz.api.service.TaskServiceImpl"/>
-    <bean id="taskTest"
-          class="com.v5zhu.quartz.api.TaskTestImpl"/>
 </beans>

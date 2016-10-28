@@ -1,5 +1,5 @@
 <%@tag pageEncoding="UTF-8"%>
-<%@ attribute name="page" type="com.changhong.chos.taskschedule.dto.PageInfoDto" required="true"%>
+<%@ attribute name="page" type="com.v5zhu.quartz.dto.PageInfoDto" required="true"%>
 <%@ attribute name="paginationSize" type="java.lang.Integer" required="true"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

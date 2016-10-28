@@ -12,8 +12,8 @@
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
-	<link rel="stylesheet" href="${ctx}/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="${ctx}/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 <%----%>
 	<%--<link rel="stylesheet" href="${ctx}/bower_components/bootstrap/dist/css/amazeui.min.css"/>--%>
 	<%--<link rel="stylesheet" href="${ctx}/bower_components/amazeui/dist/css/amazeui.flat.min.css"/>--%>

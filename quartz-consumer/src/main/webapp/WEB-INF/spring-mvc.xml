@@ -10,7 +10,7 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
     <!-- 自动扫描且只扫描@Controller -->
-    <context:component-scan base-package="com.changhong.chos.web.**.controller" use-default-filters="false">
+    <context:component-scan base-package="com.v5zhu.quartz.consumer.controller" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
@@ -19,8 +19,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
     <!--  RESOURCE FOLDERS CONFIGURATION                                  -->
     <!--  Dispatcher configuration for serving static resources           -->
     <!-- **************************************************************** -->
-    <mvc:resources location="/bower_components/" mapping="/bower_components/**"/>
-    <mvc:resources location="/assets/" mapping="/assets/**"/>
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
             <!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
@@ -33,7 +31,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
         <mvc:message-converters register-defaults="true">
             <!-- 默认情况下MappingJacksonHttpMessageConverter会设置content为application/json，在IE9下返回会出现提示下载的现象 -->
             <bean
-                    class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"
+                    class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"
                     p:supportedMediaTypes="text/html;charset=UTF-8">
             </bean>
         </mvc:message-converters>

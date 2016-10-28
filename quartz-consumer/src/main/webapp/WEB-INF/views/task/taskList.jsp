@@ -1,11 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: wei9.li@changhong.com
-  Date: 2015/4/21
-  Time: 13:33
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -167,8 +161,8 @@
     </div>
 </div>
 
-<script src="${ctx}/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="${ctx}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 
     $('.confirm-modal-sm').on('show.bs.modal',function(event){

@@ -14,8 +14,6 @@
 
     <!--用户分组服务-->
 
-    <dubbo:reference id="taskTest" interface="com.v5zhu.quartz.api.TaskTest"
-    protocol="dubbo"/>
     <dubbo:reference id="taskService" interface="com.v5zhu.quartz.api.TaskService"
                      protocol="dubbo"/>
 </beans>

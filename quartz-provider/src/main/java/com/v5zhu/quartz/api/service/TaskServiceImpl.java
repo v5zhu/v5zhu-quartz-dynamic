@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Component;
 import org.springside.modules.mapper.BeanMapper;
 
 import javax.annotation.PostConstruct;
@@ -30,6 +31,7 @@ import java.util.Set;
  * @date 2016-9-20
  */
 @SuppressWarnings("SpringJavaAutowiringInspection")
+@Component
 public class TaskServiceImpl implements TaskService {
     public final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
